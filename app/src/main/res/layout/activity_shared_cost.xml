@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SharedCostActivity">
+
+    <TextView
+        android:id="@+id/sharedCostInstructionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/sharedCostInstructionTextView_text"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/totalCostTextView"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="32dp"
+        android:text="@string/totalCostTextView_text"
+        app:layout_constraintTop_toBottomOf="@id/sharedCostInstructionTextView"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        tools:ignore="Autofill,LabelFor"
+        android:id="@+id/totalCostEditText"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:imeOptions="actionDone"
+        android:inputType="number|numberDecimal"
+        app:layout_constraintTop_toTopOf="@id/totalCostTextView"
+        app:layout_constraintStart_toEndOf="@id/totalCostTextView" />
+
+    <TextView
+        android:id="@+id/costPerPersonTextView"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="32dp"
+        android:text="@string/costPerPersonTextView_text"
+        app:layout_constraintTop_toBottomOf="@id/totalCostTextView"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        tools:ignore="Autofill,LabelFor"
+        android:id="@+id/costPerPersonEditText"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:imeOptions="actionDone"
+        android:inputType="number|numberDecimal"
+        app:layout_constraintTop_toTopOf="@id/costPerPersonTextView"
+        app:layout_constraintStart_toEndOf="@id/costPerPersonTextView" />
+
+    <TextView
+        android:id="@+id/sharedCostInstructionTextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/sharedCostInstructionTextView2_text"
+        app:layout_constraintTop_toBottomOf="@id/costPerPersonTextView"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/chooseSharersButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/chooseSharersButton_text"
+        android:onClick="chooseSharers"
+        app:layout_constraintTop_toBottomOf="@id/sharedCostInstructionTextView2"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/nSharersTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/nSharersTextView_text"
+        app:layout_constraintStart_toEndOf="@id/chooseSharersButton"
+        app:layout_constraintTop_toTopOf="@id/chooseSharersButton" />
+
+    <TextView
+        android:id="@+id/sharedCostInstructionTextView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/sharedCostInstructionTextView3_text"
+        app:layout_constraintTop_toBottomOf="@id/chooseSharersButton"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/chooseEventButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/chooseEventButton_text"
+        android:onClick="chooseEvent"
+        app:layout_constraintTop_toBottomOf="@id/sharedCostInstructionTextView3"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/chosenEventTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/chosenEventTextView_text"
+        app:layout_constraintStart_toEndOf="@id/chooseEventButton"
+        app:layout_constraintTop_toTopOf="@id/chooseEventButton"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/sharedCostInstructionTextView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/sharedCostInstructionTextView4_text"
+        app:layout_constraintTop_toBottomOf="@id/chooseEventButton"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        tools:ignore="Autofill,LabelFor"
+        android:id="@+id/descriptionEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@id/sharedCostInstructionTextView4"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/submitSharedCostButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="@string/enter"
+        android:onClick="submitSharedCost"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/cancelSharedCostButton" />
+
+    <Button
+        android:id="@+id/cancelSharedCostButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/cancel"
+        android:onClick="cancelSharedCost"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

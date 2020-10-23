@@ -1,0 +1,107 @@
+<resources>
+
+    <!-- internal -->
+    <string name="app_name">StamApp</string>
+    <string name="sheet_getrequest_generic" translatable="false">https://sheets.googleapis.com/v4/spreadsheets/</string>
+    <string name="sheet_id" translatable="false">17Io0Iby9Q67Wk4ZFGpPZJv-pJxdyfA_hj3nsm7ezrrE</string>
+    <string name="sheet_range" translatable="false">Sheet1!A1:ZZ99</string>
+    <string name="sheet_api_key" translatable="false">AIzaSyBMHBIcgW0ysjOyvCQ53S-eDI5poCAdn9Y</string>
+    <string name="sheet_scopes" translatable="false">https://www.googleapis.com/auth/drive</string>
+
+    <!-- general -->
+    <string name="enter">Enter</string>
+    <string name="cancel">Cancel</string>
+    <string name="yes">yes</string>
+    <string name="no">no</string>
+
+    <!-- in MainActivity -->
+    <!-- widgets -->
+    <string name="welcomeTextView_text">Welcome to the StamApp!</string>
+    <string name="drinkOptionsTextView_text">Order something to drink:</string>
+    <string name="scanButton_text">scan</string>
+    <string name="orderButton_text">order</string>
+    <string name="foodOptionsTextView_text">Enter an individual or shared cost:</string>
+    <string name="sharedCostButton_text">enter shared cost</string>
+    <string name="costButton_text">enter individual cost</string>
+    <string name="exitTextView_text">Exit the StamApp:</string>
+    <string name="exitButton_text">exit</string>
+    <string name="userNameTextView_text">logged in as %1$s</string>
+    <!-- toasts -->
+    <string name="loginSuccessful">Login successful</string>
+    <string name="loginNameNotFound">WARNING: your username was not found in the sheet (it may have been accidentally removed). Please choose a new one.</string>
+    <string name="cameraCanceled">Scanning for code canceled.</string>
+    <string name="cameraClosedUnexpectedly">WARNING: camera closed but no valid code was scanned.</string>
+    <string name="unrecognizedCode">ERROR: code was not found in list of valid items. Order manually for now and ask help.</string>
+    <string name="unrecognizedItem">ERROR: item was not found in list of valid items. Order something else for now and ask help.</string>
+    <string name="orderSuccess">You have successfully ordered a %1$s!</string>
+    <string name="orderCanceled">Order canceled.</string>
+    <string name="orderError">ERROR: something went wrong and the order could not be placed…</string>
+    <string name="costSuccess">Cost entered successfully.</string>
+    <string name="costCanceled">Cost canceled.</string>
+    <string name="costError">ERROR: something went wrong and the cost could not be placed…</string>
+    <!-- request connection dialog -->
+    <string name="connectionDialogTitle">Connection error</string>
+    <string name="connectionDialogMessage">No internet connection could be detected. Please turn on Wifi (if available) or mobile data.</string>
+    <string name="connectionDialogPositive">go to internet settings</string>
+    <string name="connectionDialogNegative">cancel (StamApp will close)</string>
+    <!-- request close connection dialog -->
+    <string name="closeConnectionDialogTitle">Connection warning</string>
+    <string name="closeConnectionDialogMessage">Your internet connection was turned on by StamApp. Do you want to close it upon exiting?</string>
+    <string name="closeConnectionDialogPositive">yes, go to internet settings before exiting</string>
+
+    <!-- in ScanCodeActivity -->
+    <string name="barcodeTextView_text">searching for barcode…</string>
+    <string name="camera_granted">Camera permissions are now granted.\nStart scanner again to continue.</string>
+    <string name="camera_notgranted">Camera permissions denied.\nYou can still place an order manually.</string>
+
+    <!-- in ManualOrderActivity -->
+    <string name="chooseFromListInstruction">choose an item from the list</string>
+
+    <!-- in LoginActivity -->
+    <string name="loginButton_text">login</string>
+    <string name="chooseUserNameTextView_text">choose user name</string>
+    <string name="messageTextView_text">Login is only required when first using StamApp. Your username will be stored on this device and you will be automatically logged on next time you open the app. Note: you can only use  the app from this device! To change user name, see the manual.</string>
+    <string name="invalid_chars">ERROR: invalid username. A username can only contain normal letters (including capitals), numbers and spaces.</string>
+
+    <!-- in SharedCostActivity -->
+    <!-- widgets -->
+    <string name="sharedCostInstructionTextView_text">Enter total cost OR cost per person:</string>
+    <string name="totalCostTextView_text">total cost:</string>
+    <string name="costPerPersonTextView_text">cost per person:</string>
+    <string name="sharedCostInstructionTextView2_text">Choose people to share:</string>
+    <string name="chooseSharersButton_text">choose people to share</string>
+    <string name="nSharersTextView_text">(0 people sharing)</string>
+    <string name="nSharersTextView_onePersonText">(1 person sharing)</string>
+    <string name="nSharersTextView_multiPersonText">(%1$s people sharing)</string>
+    <string name="sharedCostInstructionTextView3_text">Choose event to which cost belongs:</string>
+    <string name="chooseEventButton_text">choose event</string>
+    <string name="chosenEventTextView_text">(no event chosen)</string>
+    <string name="chosenEventTextView_noEventsText">(NO events are currently available; create a new one below)</string>
+    <string name="sharedCostInstructionTextView4_text">OR give a name for a new event:</string>
+    <!-- toasts -->
+    <string name="error_noCost">ERROR: please set either total cost or cost per person.</string>
+    <string name="error_bothCosts">ERROR: please do not set both total cost and cost per person.</string>
+    <string name="error_noSharer">ERROR: please choose at least one person to share in the cost.</string>
+    <string name="error_noEvent">ERROR: please either choose an existing event or make a new one.</string>
+    <string name="error_bothEvents">ERROR: you chose both an existing event and entered a new one, please remove one of both.\n(You can undo you choice of an existing event by pressing the \'choose event\' button and then press \'cancel\'.)</string>
+    <string name="error_existingEvent">ERROR: this event name already exists; select it (via the \'choose event\' button) or choose a new event name.</string>
+    <!-- choose sharers dialog -->
+    <string name="chooseSharersDialogTitle">Select the people sharing the cost</string>
+    <!-- choose event dialog -->
+    <string name="chooseEventDialogTitle">Select event to which this cost belongs</string>
+
+    <!-- in IndividualCostActivity -->
+    <!-- widgets -->
+    <string name="individualCostInstructionTextView_text">Enter your cost:</string>
+    <string name="individualCostInstructionTextView2_text">Choose event to which cost belongs:</string>
+    <string name="individualCostInstructionTextView3_text">OR give a name for a new event:</string>
+    <!-- toasts -->
+    <string name="error_invalidCost">ERROR: enter a valid cost.</string>
+    <string name="invalid_exists">ERROR: invalid username. The requested username already exists…</string>
+
+    <!-- in menu -->
+    <string name="scanOnStartupOption">Start scanner automatically</string>
+
+    <!-- in processing screen -->
+    <string name="processingTextView_text">processing…</string>
+</resources>
