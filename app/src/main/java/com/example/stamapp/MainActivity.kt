@@ -716,8 +716,8 @@ class MainActivity : AppCompatActivity() {
                         ).show()
                     }
                     Activity.RESULT_OK -> {
-                        var scannedCode: String = data!!.getStringExtra("code")?:""
-                        scannedCode = 2.toString() // for testing!!!
+                        val scannedCode: String = data!!.getStringExtra("code")?:""
+                        //scannedCode = 2.toString() // for testing!!!
                         placeOrderFromCode( thisClient!!, scannedCode )
                     }
                     else -> {
