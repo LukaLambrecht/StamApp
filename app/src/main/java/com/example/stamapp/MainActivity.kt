@@ -255,7 +255,7 @@ class MainActivity : AppCompatActivity() {
     // start ScanCodeActivity
     // (linked to "scan" button)
     fun scanCode(@Suppress("UNUSED_PARAMETER")view: View){
-        // true content
+        sheetContentReader = readSheet()
         val intent = Intent(this,ScanCodeActivity::class.java)
         startActivityForResult(intent,scanCodeActivityCallID)
     }
@@ -288,9 +288,11 @@ class MainActivity : AppCompatActivity() {
     // start ManualOrderActivity
     // (linked to "order" button)
     fun manualOrder(@Suppress("UNUSED_PARAMETER")view: View){
+        sheetContentReader = readSheet()
         var availableItems = ""
         for( item:String in sheetContentReader.getItems() ){
-            availableItems += "$item;"
+            val itemPrice = sheetContentReader.getItemPrice(item).toString()
+            availableItems += "$item:$itemPrice;"
         }
         availableItems = availableItems.dropLast(1) // remove final ; character
         val intent = Intent(this,ManualOrderActivity::class.java)
@@ -305,6 +307,7 @@ class MainActivity : AppCompatActivity() {
     // start SharedCostActivity
     // (linked to "shared cost" button)
     fun sharedCost(@Suppress("UNUSED_PARAMETER")view: View){
+        sheetContentReader = readSheet()
         // format list of existing names
         var existingNames = ""
         for( name:String in sheetContentReader.getNames() ){
@@ -330,6 +333,7 @@ class MainActivity : AppCompatActivity() {
     // start IndividualCostActivity
     // (linked to "individual cost" button)
     fun individualCost(@Suppress("UNUSED_PARAMETER")view: View){
+        sheetContentReader = readSheet()
         // read sheet content and format list of existing events
         var existingEvents = ""
         for( event:String in sheetContentReader.getEvents() ){

@@ -9,6 +9,7 @@ import android.os.Bundle
 class ManualOrderActivity : AppCompatActivity() {
 
     private var availableItems: Array<String>? = null
+    private var availableItemsToShow: Array<String>? = null
     private var selectedIndex: Int = -1
     private var dialog: AlertDialog.Builder? = null
     private val resultIntent = Intent()
@@ -18,15 +19,23 @@ class ManualOrderActivity : AppCompatActivity() {
         setContentView(R.layout.activity_manual_order)
 
         // get array of available items from intent
+        // every element in the array is supposed to be of the form <item>:<price>
         val itemslist = intent.getStringExtra("availableItems")?.split(";")
         if( itemslist==null ){ closeActivity() } // return without controlled RESULT_CANCELED
         if( itemslist!!.isEmpty() ){ closeActivity() } // return without controlled RESULT_CANCELED
         availableItems = Array(itemslist.size){""}
-        for( i:Int in itemslist.indices ){ availableItems!![i] = itemslist[i] }
+        availableItemsToShow = Array(itemslist.size){""}
+        for( i:Int in itemslist.indices ){
+            val itemSplit = itemslist[i].split(":")
+            val itemName = itemSplit[0]
+            val itemPrice = itemSplit[1]
+            availableItems!![i] = itemName
+            availableItemsToShow!![i] = "$itemName ($itemPrice \u20AC)"
+        }
 
         // create options dialog
         dialog = AlertDialog.Builder( this )
-        formatDialog( availableItems!! )
+        formatDialog( availableItemsToShow!! )
         dialog!!.show()
     }
 
