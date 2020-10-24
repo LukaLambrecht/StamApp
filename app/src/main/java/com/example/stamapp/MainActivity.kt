@@ -271,6 +271,7 @@ class MainActivity : AppCompatActivity() {
     private fun placeOrderFromCode( client: StamClient, code: String ){
         val item : String = sheetContentReader.getItemFromCode( code )
         if( item=="" ){
+            showRedBoundary()
             Toast.makeText(
                 applicationContext,
                 R.string.unrecognizedCode,
