@@ -73,7 +73,10 @@ class SheetContentReader{
                 // this row should also contain 'total' header
                 if ("Totaal" in sheetcontent[i]){ total_column = sheetcontent[i].indexOf("Totaal") }
                 // catch exception of zero names
-                if (i == sheetcontent.size - 1) { break }
+                if (i == sheetcontent.size - 1) {
+                    last_name_row = i
+                    break
+                }
                 // else loop over remaining rows and check if they contain valid names
                 for (j in i+1 until sheetcontent.size) {
                     // allow empty rows in between valid rows
