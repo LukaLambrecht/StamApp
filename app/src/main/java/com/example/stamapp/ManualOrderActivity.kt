@@ -20,13 +20,22 @@ class ManualOrderActivity : AppCompatActivity() {
 
         // get array of available items from intent
         // every element in the array is supposed to be of the form <item>:<price>
-        val itemslist = intent.getStringExtra("availableItems")?.split(";")
-        if( itemslist==null ){ closeActivity() } // return without controlled RESULT_CANCELED
-        if( itemslist!!.isEmpty() ){ closeActivity() } // return without controlled RESULT_CANCELED
-        availableItems = Array(itemslist.size){""}
-        availableItemsToShow = Array(itemslist.size){""}
-        for( i:Int in itemslist.indices ){
-            val itemSplit = itemslist[i].split(":")
+        val itemstring = intent.getStringExtra("availableItems") ?: ""
+        if (itemstring.isEmpty()) {
+            // use 'result_first_user' as a dummy value for 'result_failed'
+            // since the latter seems not to be present
+            setResult(Activity.RESULT_FIRST_USER)
+            closeActivity()
+        } else { makeDialog(itemstring) }
+        // (need to have else here since closeActivity seems to be asynchronous!)
+    }
+    
+    private fun makeDialog( itemString: String ){
+        val itemsList = itemString.split(";")
+        availableItems = Array(itemsList.size){""}
+        availableItemsToShow = Array(itemsList.size){""}
+        for( i:Int in itemsList.indices ){
+            val itemSplit = itemsList[i].split(":")
             val itemName = itemSplit[0]
             val itemPrice = itemSplit[1]
             availableItems!![i] = itemName

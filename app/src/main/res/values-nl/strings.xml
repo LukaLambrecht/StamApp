@@ -70,4 +70,5 @@
     <string name="processingTextView_text">verwerken…</string>
     <string name="chooseFromListInstruction">kies een item uit de lijst</string>
     <string name="loginSuccessful">Inloggen gelukt</string>
+    <string name="noItemsInSheet">ERROR: er werden geen beschikbare items gevonden.</string>
 </resources>

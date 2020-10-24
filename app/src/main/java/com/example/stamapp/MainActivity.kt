@@ -744,6 +744,14 @@ class MainActivity : AppCompatActivity() {
                         val orderedItem: String = data!!.getStringExtra("item")?:""
                         placeOrderFromItemName( thisClient!!, orderedItem )
                     }
+                    Activity.RESULT_FIRST_USER -> {
+                        showRedBoundary()
+                        Toast.makeText(
+                            applicationContext,
+                            R.string.noItemsInSheet,
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
                     else -> {
                         showRedBoundary()
                         Toast.makeText(

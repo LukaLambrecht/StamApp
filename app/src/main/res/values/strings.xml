@@ -35,6 +35,7 @@
     <string name="unrecognizedItem">ERROR: item was not found in list of valid items. Order something else for now and ask help.</string>
     <string name="orderSuccess">You have successfully ordered a %1$s!</string>
     <string name="orderCanceled">Order canceled.</string>
+    <string name="noItemsInSheet">ERROR: no available items were found.</string>
     <string name="orderError">ERROR: something went wrong and the order could not be placed…</string>
     <string name="costSuccess">Cost entered successfully.</string>
     <string name="costCanceled">Cost canceled.</string>
@@ -100,7 +101,7 @@
     <string name="invalid_exists">ERROR: invalid username. The requested username already exists…</string>
 
     <!-- in menu -->
-    <string name="scanOnStartupOption">Start scanner automatically</string>
+    <string name="scanOnStartupOption">start scanner automatically</string>
 
     <!-- in processing screen -->
     <string name="processingTextView_text">processing…</string>
