@@ -98,12 +98,15 @@ class SheetContentReader{
             if( sheetcontent[item_row][j].isEmpty() ){ continue }
             // found item candidate (name not empty), now check code and price
             if( sheetcontent[code_row][j].isEmpty() ) { continue }
-            if( sheetcontent[price_row][j].isEmpty() || !stringIsDouble(sheetcontent[price_row][j])) { continue }
+            if( sheetcontent[price_row][j].isEmpty() ) { continue }
+            val priceCandidate = sheetcontent[price_row][j].replace(",",".")
+            // (allow both , and . as decimal characters)
+            if( !stringIsDouble(priceCandidate)) { continue }
             // item is valid, fill info
             items.add(sheetcontent[item_row][j])
             iteminfo.add( mapOf( "item" to sheetcontent[item_row][j],
                                  "code" to sheetcontent[code_row][j],
-                                 "price" to sheetcontent[price_row][j].toDouble(),
+                                 "price" to priceCandidate.toDouble(),
                                  "column" to j ))
         }
         // catch exception of no 'event' header
