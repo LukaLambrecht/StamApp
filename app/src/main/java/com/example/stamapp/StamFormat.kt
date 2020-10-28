@@ -237,9 +237,10 @@ class StamClient{
         // loop over events and fill event costs
         for( event in reader.getEvents() ){
             val thiseventcolumn = reader.getEventColumn(event)
-            if( stringIsDouble(reader.readContent(thisnamerow,thiseventcolumn)) ){
-                val thiseventcost = reader.readContent(thisnamerow,thiseventcolumn).toDouble()
-                eventcosts[event] = thiseventcost
+            val costCandidate = reader.readContent(thisnamerow,thiseventcolumn).replace(",",".")
+            // (allow flexibility in . or , as decimal character)
+            if( stringIsDouble(costCandidate) ){
+                eventcosts[event] = costCandidate.toDouble()
             } else {
                 eventcosts[event] = 0.0
             }

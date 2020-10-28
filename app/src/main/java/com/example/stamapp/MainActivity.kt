@@ -50,7 +50,6 @@ import kotlin.system.exitProcess
 
 // TODO: testing, testing, testing, ....
 // TODO: test with real bar codes
-// TODO: start documenting...
 
 class MainActivity : AppCompatActivity() {
 
